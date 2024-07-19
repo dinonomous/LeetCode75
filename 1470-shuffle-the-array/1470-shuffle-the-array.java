@@ -1,14 +1,12 @@
 class Solution {
     public int[] shuffle(int[] nums, int n) {
-        ArrayList<Integer> arr = new ArrayList<Integer>();
-        for(int i =0;i<nums.length/2;i++){
-            arr.add(nums[i]);
-            arr.add(nums[n+i]);
+        int[] result = new int[2 * n];
+        
+        for (int i = 0; i < n; i++) {
+            result[2 * i] = nums[i];
+            result[2 * i + 1] = nums[n + i];
         }
-        int[] sol = new int[arr.size()];
-        for (int i = 0; i < arr.size(); i++) {
-            sol[i] = arr.get(i);
-        }
-        return sol;
+        
+        return result;
     }
 }

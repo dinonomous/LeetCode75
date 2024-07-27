@@ -4,11 +4,16 @@ class Solution {
         while(i<nums.length-1){
             if(nums[i] != i+1){
                 int correct = nums[i]-1;
-            if(nums[i]!=nums[correct]){
-                swap(nums,nums[i]-1,i);
-            }else return nums[i];
+                if(nums[i]!=nums[correct]){
+                    swap(nums,i,correct);
+                }
+                else{ 
+                    return nums[i];
+                }
             }
-            else i++;
+            else{
+                i++;
+            } 
         }
         return nums[i];
     }
